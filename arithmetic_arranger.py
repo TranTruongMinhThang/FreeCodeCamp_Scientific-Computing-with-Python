@@ -117,7 +117,7 @@ def arithmetic_arranger(listOfProblems, see=None):
 
 
 
-exp2 = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
-exp1 = ["321 + 698", "3801 + 2", "45 + 43", "123 + 49",'1 + 2']
-# arithmetic_arranger(exp2,True)
-arithmetic_arranger(exp1)
+# exp2 = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
+# exp1 = ["321 + 698", "3801 + 2", "45 + 43", "123 + 49",'1 + 2']
+# # arithmetic_arranger(exp2,True)
+# arithmetic_arranger(exp1)
