@@ -1,10 +1,9 @@
 import re
 
-
 def arithmetic_arranger(listOfProblems, see=None):
     if len(listOfProblems) > 5:
-        print('Error: Too many problems.')
-        return
+        # print('Error: Too many problems.')
+        return 'Error: Too many problems.'
 
     listNum1 = list()
     listOperator = list()
@@ -15,8 +14,8 @@ def arithmetic_arranger(listOfProblems, see=None):
 
         num1 = i.split()[0]
         if re.search('[a-z]',num1):
-            print('Error: Numbers must only contain digits.')
-            return
+            # print('Error: Numbers must only contain digits.')
+            return 'Error: Numbers must only contain digits.'
         else:
             listNum1.append(num1)
 
@@ -25,8 +24,8 @@ def arithmetic_arranger(listOfProblems, see=None):
 
         num2 = i.split()[2]
         if re.search('[a-z]',num2):
-            print('Error: Numbers must only contain digits.')
-            return
+            # print('Error: Numbers must only contain digits.')
+            return 'Error: Numbers must only contain digits.'
         else:
             listNum2.append(num2)
 
@@ -37,18 +36,18 @@ def arithmetic_arranger(listOfProblems, see=None):
             result = int(num1) - int(num2)
             listResult.append(str(result))
         else:
-            print("Error: Operator must be '+' or '-'.")
-            return
+            # print("Error: Operator must be '+' or '-'.")
+            return "Error: Operator must be '+' or '-'."
 
     # print(listNum1)
     if len(listNum1) > len(listOfProblems) or len(listNum2) > len(listOfProblems):
-        print('Error: Numbers must only contain digits.')
-        return
+        # print('Error: Numbers must only contain digits.')
+        return 'Error: Numbers must only contain digits.'
 
     for i in range(len(listNum1)):
         if len(listNum1[i]) > 4 or len(listNum2[i]) > 4:
-            print('Error: Numbers cannot be more than four digits.')
-            return
+            # print('Error: Numbers cannot be more than four digits.')
+            return 'Error: Numbers cannot be more than four digits.'
 
     listDigits = list()
     for i in range(len(listNum1)):
@@ -104,12 +103,18 @@ def arithmetic_arranger(listOfProblems, see=None):
             resultLine += '    ' + ' '*(listDigits[i]+2-len(listResult[i])) + listResult[i]
     # print(resultLine)
 
-    print(upperLine)
-    print(secondLine)
-    print(dashLine)
+    # print(upperLine)
+    # print(secondLine)
+    # print(dashLine)
+
+    arranged_problems = ''
 
     if see == True:
-        print(resultLine)
+        arranged_problems += upperLine + '\n' + secondLine +'\n'+ dashLine + '\n' + resultLine
+    else:
+        arranged_problems += upperLine + '\n' + secondLine + '\n' + dashLine
+
+    return arranged_problems
 # def arithmetic_arranger(lst):
 #     see = False
 #     arithmetic_arranger(lst,see)
@@ -118,6 +123,6 @@ def arithmetic_arranger(listOfProblems, see=None):
 
 
 # exp2 = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
-# exp1 = ["321 + 698", "3801 + 2", "45 + 43", "123 + 49",'1 + 2']
-# # arithmetic_arranger(exp2,True)
-# arithmetic_arranger(exp1)
+# exp1 = ["321 + 698", "3801 + 2", "45 + 43", "123 + 49",'1 / 2']
+# print(arithmetic_arranger(exp2,True))
+# print(arithmetic_arranger(exp1))
