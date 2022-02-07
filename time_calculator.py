@@ -1,5 +1,5 @@
-def time_calculator(startTime, duration, day=None):
-    startTimeList = startTime.split()
+def add_time(start, duration, day=None):
+    startTimeList = start.split()
 
     if startTimeList[1] == 'PM':
         hour1 = int(startTimeList[0].split(':')[0]) + 12
@@ -16,7 +16,7 @@ def time_calculator(startTime, duration, day=None):
     resultMinuteRaw = (minute1 + durationMinute) % 60
     resultHourRaw = hour1 + durationHour + (minute1 + durationMinute)//60
 
-    returnPrint = 'Returns: '
+    returnPrint = ''
 
     if resultHourRaw // 24 == 0:
         if resultHourRaw // 12 == 1:
@@ -62,11 +62,12 @@ def time_calculator(startTime, duration, day=None):
     else:
         returnPrint += dayOfWeekPrint + dayLaterPrint
     print(returnPrint)
+    return returnPrint
 
 startTime = "11:59 PM"
-duration = "25:00"
-day = 'Sunday'
+duration = "24:05"
+day = 'Wednesday'
 startTimeList = startTime.split()
 # print(startTimeList[0].split(':'))
 
-time_calculator(startTime, duration, day)
+add_time(startTime, duration, day)
