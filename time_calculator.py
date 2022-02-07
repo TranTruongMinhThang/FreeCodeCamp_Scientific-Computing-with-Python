@@ -20,14 +20,14 @@ def add_time(start, duration, day=None):
 
     if resultHourRaw // 24 == 0:
         if resultHourRaw // 12 == 1:
-            returnPrint += str(resultHourRaw % 12) + ':' + str(resultMinuteRaw) + ' PM'
+            returnPrint += str(resultHourRaw % 12) + ':' + str(f"{resultMinuteRaw:02d}") + ' PM'
         else:
-            returnPrint += str(resultHourRaw) + ':' + str(resultMinuteRaw) + ' AM'
+            returnPrint += str(resultHourRaw) + ':' + str(f"{resultMinuteRaw:02d}") + ' AM'
     else:
         if resultHourRaw % 24 // 12 > 0:
-            returnPrint += str(resultHourRaw % 24 % 12) + ':' + str(resultMinuteRaw) + ' PM'
+            returnPrint += str(resultHourRaw % 24 % 12) + ':' + str(f"{resultMinuteRaw:02d}") + ' PM'
         else:
-            returnPrint += str(resultHourRaw % 24) + ':' + str(resultMinuteRaw) + ' AM'
+            returnPrint += str(resultHourRaw % 24) + ':' + str(f"{resultMinuteRaw:02d}") + ' AM'
 
     # print(returnPrint)
 
