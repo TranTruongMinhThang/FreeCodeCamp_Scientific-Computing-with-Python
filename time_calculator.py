@@ -31,6 +31,17 @@ def time_calculator(startTime, duration, day=None):
 
     print(returnPrint)
 
+    dayOfWeekPrint = ', '
+
+    dayOfWeek = {'monday': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4, 'friday': 5, 'saturday': 6, 'sunday': 7}
+    dayOfWeekReverse = {1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'}
+
+    if resultHourRaw // 24 == 0:
+        dayOfWeek += dayOfWeekReverse[dayOfWeek[day.lower()]]
+    else:
+        (dayOfWeek[day.lower()] + resultHourRaw // 24)
+
+
 
 startTime = "3:59 PM"
 duration = "8:59"
@@ -38,4 +49,3 @@ startTimeList = startTime.split()
 # print(startTimeList[0].split(':'))
 
 time_calculator(startTime, duration)
-
