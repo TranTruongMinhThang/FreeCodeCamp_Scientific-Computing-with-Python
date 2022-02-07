@@ -63,10 +63,10 @@ def time_calculator(startTime, duration, day=None):
         returnPrint += dayOfWeekPrint + dayLaterPrint
     print(returnPrint)
 
-startTime = "23:00 PM"
-duration = "25:00"
-day = 'Sunday'
-startTimeList = startTime.split()
-# print(startTimeList[0].split(':'))
-
-time_calculator(startTime, duration, day)
+# startTime = "23:00 PM"
+# duration = "25:00"
+# day = 'Sunday'
+# startTimeList = startTime.split()
+# # print(startTimeList[0].split(':'))
+#
+# time_calculator(startTime, duration, day)
