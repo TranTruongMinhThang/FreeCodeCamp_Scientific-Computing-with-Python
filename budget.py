@@ -31,7 +31,7 @@ class Category:
     def transfer(self, amount: float, category):
         if self.check_funds(amount):
             self.withdraw(amount, 'Transfer to ' + category.name)
-            category.deposit(amount, 'Received from ' + self.name)
+            category.deposit(amount, 'Transfer from ' + self.name)
             return True
         else:
             return False
